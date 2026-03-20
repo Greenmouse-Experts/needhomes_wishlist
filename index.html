@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NeedHomes – Be Among The First to Own Smarter</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            brand: "#E87722",
+                        },
+                        fontFamily: {
+                            sans: ["Inter", "system-ui", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                background: radial-gradient(
+                    ellipse 60% 60% at 70% 40%,
+                    #5a2800 0%,
+                    #1a0e00 40%,
+                    #111010 100%
+                );
+                min-height: 100vh;
+            }
+            .avatar-ring {
+                box-shadow: 0 0 0 2px #1a1a1a;
+            }
+        </style>
+    </head>
+    <body class="font-sans text-white min-h-screen flex flex-col">
+        <!-- ───────── HEADER ───────── -->
+        <header
+            class="flex items-center justify-between px-8 md:px-16 pt-7 pb-4 container mx-auto"
+        >
+            <!-- Logo -->
+            <div class="flex flex-col items-start leading-none select-none">
+                <!-- arc SVG -->
+                <svg
+                    width="54"
+                    height="14"
+                    viewBox="0 0 54 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="mb-0.5"
+                >
+                    <path
+                        d="M2 12 Q27 0 52 12"
+                        stroke="#E87722"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        fill="none"
+                    />
+                </svg>
+                <span
+                    class="text-white font-extrabold text-xl tracking-widest uppercase"
+                    >NEEDHOMES</span
+                >
+            </div>
+
+            <!-- Contact -->
+            <a
+                href="mailto:sales@needhomes.ng"
+                class="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+            >
+                <svg
+                    class="w-4 h-4 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    viewBox="0 0 24 24"
+                >
+                    <rect
+                        x="2"
+                        y="4"
+                        width="20"
+                        height="16"
+                        rx="2"
+                        stroke="currentColor"
+                    />
+                    <path d="M2 7l10 7 10-7" stroke="currentColor" />
+                </svg>
+                sales@needhomes.ng
+            </a>
+        </header>
+
+        <!-- ───────── HERO ───────── -->
+        <main class="flex-1 flex items-center px-8 md:px-16 py-8 md:py-12">
+            <div
+                class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"
+            >
+                <!-- LEFT – copy -->
+                <div
+                    class="flex flex-col items-center gap-7 *:text-center mt-12"
+                >
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-tight"
+                    >
+                        Be Among The First to Own Smarter
+                    </h1>
+
+                    <p
+                        class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-lg"
+                    >
+                        The future of real estate investment is now. Join our
+                        waitlist for exclusive access.
+                    </p>
+
+                    <!-- Email form -->
+                    <form
+                        id="waitlist-form"
+                        class="flex flex-col items-center justify-center sm:flex-row gap-0 max-w-[32rem] w-full"
+                        onsubmit="handleSubmit(event)"
+                    >
+                        <input
+                            id="email-input"
+                            type="email"
+                            placeholder="Your email address"
+                            required
+                            class="flex-1 bg-transparent border border-white/30 rounded-l-full sm:rounded-r-none rounded-r-full px-6 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-brand transition-colors text-sm"
+                        />
+                        <button
+                            type="submit"
+                            class="bg-brand hover:bg-orange-600 active:bg-orange-700 text-white font-semibold px-7 py-3.5 rounded-r-full sm:rounded-l-none rounded-l-full transition-colors text-sm whitespace-nowrap cursor-pointer"
+                        >
+                            Join the Waitlist
+                        </button>
+                    </form>
+
+                    <!-- Success message (hidden by default) -->
+                    <p
+                        id="success-msg"
+                        class="hidden text-green-400 text-sm font-medium -mt-3"
+                    >
+                        ✓ You're on the list! We'll be in touch.
+                    </p>
+
+                    <!-- Social proof -->
+                    <div class="flex items-center gap-3">
+                        <!-- Avatars -->
+                        <div class="flex -space-x-2">
+                            <img
+                                src="https://i.pravatar.cc/40?img=47"
+                                alt="user"
+                                class="w-9 h-9 rounded-full object-cover avatar-ring"
+                            />
+                            <img
+                                src="https://i.pravatar.cc/40?img=12"
+                                alt="user"
+                                class="w-9 h-9 rounded-full object-cover avatar-ring"
+                            />
+                            <img
+                                src="https://i.pravatar.cc/40?img=32"
+                                alt="user"
+                                class="w-9 h-9 rounded-full object-cover avatar-ring"
+                            />
+                        </div>
+                        <span class="text-gray-300 text-sm"
+                            >Join 2000+ already onboard</span
+                        >
+                    </div>
+                </div>
+
+                <!-- RIGHT – phone image -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <img
+                            src="public/phone.png"
+                            alt="NeedHomes app on phone"
+                            class="w-[520px] md:w-[620px] lg:w-[720px] object-contain drop-shadow-2xl"
+                        />
+                        <!-- Subtle glow -->
+                        <div
+                            class="absolute bottom-10 left-1/2 -translate-x-1/2 w-64 h-20 bg-brand/20 blur-3xl -z-10 rounded-full"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ───────── FOOTER ───────── -->
+        <footer
+            class="flex flex-col sm:flex-row items-center justify-between px-8 md:px-16 py-5 gap-4 border-t border-white/5"
+        >
+            <p class="text-xs text-gray-500 text-center sm:text-left">
+                © 2026 Needhomes Property Investment Limited. All rights
+                reserved. Designed by Greenmouse.
+            </p>
+
+            <div class="flex items-center gap-5">
+                <!-- X / Twitter -->
+                <a
+                    href="#"
+                    aria-label="X"
+                    class="text-gray-400 hover:text-white transition-colors"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                    >
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                        />
+                    </svg>
+                </a>
+                <!-- Facebook -->
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                    class="text-gray-400 hover:text-white transition-colors"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                    >
+                        <path
+                            d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"
+                        />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                    class="text-gray-400 hover:text-white transition-colors"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                    >
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                        />
+                    </svg>
+                </a>
+            </div>
+        </footer>
+
+        <script src="index.js"></script>
+    </body>
+</html>
