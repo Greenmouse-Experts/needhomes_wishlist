@@ -32,14 +32,15 @@
                     #1a0e00 40%,
                     #111010 100%
                 );
-                min-height: 100vh;
+                height: 100vh;
+                overflow: hidden;
             }
             .avatar-ring {
                 box-shadow: 0 0 0 2px #1a1a1a;
             }
         </style>
     </head>
-    <body class="font-sans text-white min-h-screen flex flex-col">
+    <body class="font-sans text-white h-screen flex flex-col overflow-hidden">
         <!-- ───────── HEADER ───────── -->
         <header
             class="flex items-center justify-between px-8 md:px-16 pt-7 pb-4 container mx-auto"
@@ -96,13 +97,13 @@
         </header>
 
         <!-- ───────── HERO ───────── -->
-        <main class="flex-1 flex items-center px-8 md:px-16 py-8 md:py-12">
+        <main class="flex-1 flex items-center px-8 md:px-16 py-4 md:py-6 overflow-hidden">
             <div
-                class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"
+                class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10"
             >
                 <!-- LEFT – copy -->
                 <div
-                    class="flex flex-col items-center gap-7 *:text-center mt-12"
+                    class="flex flex-col items-center gap-5 *:text-center"
                 >
                     <h1
                         class="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-tight"
@@ -120,7 +121,7 @@
                     <!-- Email form -->
                     <form
                         id="waitlist-form"
-                        class="flex flex-col items-center justify-center sm:flex-row gap-0 max-w-[32rem] w-full"
+                        class="flex flex-row gap-0 max-w-[32rem] w-full"
                         onsubmit="handleSubmit(event)"
                     >
                         <input
@@ -128,11 +129,11 @@
                             type="email"
                             placeholder="Your email address"
                             required
-                            class="flex-1 bg-transparent border border-white/30 rounded-l-full sm:rounded-r-none rounded-r-full px-6 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-brand transition-colors text-sm"
+                            class="flex-1 min-w-0 bg-transparent border border-white/30 rounded-l-full px-4 sm:px-6 py-2.5 sm:py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-brand transition-colors text-xs sm:text-sm"
                         />
                         <button
                             type="submit"
-                            class="bg-brand hover:bg-orange-600 active:bg-orange-700 text-white font-semibold px-7 py-3.5 rounded-r-full sm:rounded-l-none rounded-l-full transition-colors text-sm whitespace-nowrap cursor-pointer"
+                            class="bg-brand hover:bg-orange-600 active:bg-orange-700 text-white font-semibold px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-r-full transition-colors text-xs sm:text-sm whitespace-nowrap cursor-pointer"
                         >
                             Join the Waitlist
                         </button>
@@ -178,7 +179,7 @@
                         <img
                             src="public/phone.png"
                             alt="NeedHomes app on phone"
-                            class="w-[520px] md:w-[620px] lg:w-[720px] object-contain drop-shadow-2xl"
+                            class="w-[320px] md:w-[400px] lg:w-[460px] max-h-[70vh] object-contain drop-shadow-2xl"
                         />
                         <!-- Subtle glow -->
                         <div
@@ -195,7 +196,7 @@
         >
             <p class="text-xs text-gray-500 text-center sm:text-left">
                 © 2026 Needhomes Property Investment Limited. All rights
-                reserved. Designed by Greenmouse.
+                reserved.
             </p>
 
             <div class="flex items-center gap-5">
