@@ -1,5 +1,19 @@
 const API_BASE = 'https://needhomes-backend-staging.onrender.com';
 
+function openModal() {
+  const modal = document.getElementById('success-modal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('success-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
 async function handleSubmit(e) {
   e.preventDefault();
   const input = document.getElementById('email-input');
@@ -21,11 +35,7 @@ async function handleSubmit(e) {
 
     if (response.status === 201) {
       input.value = '';
-      msg.textContent = result.message || "You're on the waitlist! We'll be in touch.";
-      msg.classList.remove('hidden', 'text-yellow-400');
-      msg.classList.add('text-green-400');
-      msg.classList.remove('hidden');
-      setTimeout(() => msg.classList.add('hidden'), 6000);
+      openModal();
     } else if (response.status === 400 && result.message) {
       msg.textContent = result.message;
       msg.classList.remove('hidden', 'text-green-400');
