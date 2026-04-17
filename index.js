@@ -36,6 +36,12 @@ async function handleSubmit(e) {
     if (response.status === 201) {
       input.value = '';
       openModal();
+    } else if (response.status === 409) {
+      msg.textContent = result.message || 'This email is already on the waitlist.';
+      msg.classList.remove('hidden', 'text-green-400');
+      msg.classList.add('text-yellow-400');
+      setTimeout(() => msg.classList.add('hidden'), 6000);
+      openModal();
     } else if (response.status === 400 && result.message) {
       msg.textContent = result.message;
       msg.classList.remove('hidden', 'text-green-400');
